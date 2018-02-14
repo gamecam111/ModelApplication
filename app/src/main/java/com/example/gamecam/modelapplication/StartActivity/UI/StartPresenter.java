@@ -10,6 +10,7 @@ import com.example.gamecam.modelapplication.DaggerCore.ApplicationScope;
 import com.example.gamecam.modelapplication.R;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 /**
  * Created by gamecam on 14.2.2018.

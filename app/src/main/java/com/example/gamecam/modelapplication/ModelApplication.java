@@ -1,5 +1,6 @@
 package com.example.gamecam.modelapplication;
 
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
@@ -28,6 +29,18 @@ public class ModelApplication extends ApplicationCore<AppComponent> {
 
     public static ModelApplication get(Context context) {
         return (ModelApplication) context.getApplicationContext();
+    }
+
+    @Override
+    protected void attachBaseContext(Context context) {
+        super.attachBaseContext(context);
+
+    }
+
+
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
     }
 }
 
