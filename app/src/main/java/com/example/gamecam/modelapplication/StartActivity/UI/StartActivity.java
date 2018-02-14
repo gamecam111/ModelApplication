@@ -1,7 +1,9 @@
-package com.example.gamecam.modelapplication;
+package com.example.gamecam.modelapplication.StartActivity.UI;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.gamecam.modelapplication.R;
 
 public class StartActivity extends AppCompatActivity {
 
