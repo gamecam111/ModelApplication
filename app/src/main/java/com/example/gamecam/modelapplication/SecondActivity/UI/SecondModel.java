@@ -5,4 +5,8 @@ package com.example.gamecam.modelapplication.SecondActivity.UI;
  */
 
 public class SecondModel {
+
+    public SecondModel () {
+
+    }
 }

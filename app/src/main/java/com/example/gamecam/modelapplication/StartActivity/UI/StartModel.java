@@ -5,4 +5,8 @@ package com.example.gamecam.modelapplication.StartActivity.UI;
  */
 
 public class StartModel {
+
+    public StartModel () {
+
+    }
 }
