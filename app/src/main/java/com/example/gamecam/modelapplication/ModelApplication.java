@@ -3,6 +3,7 @@ package com.example.gamecam.modelapplication;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
+import android.content.SharedPreferences;
 
 import com.example.gamecam.modelapplication.DaggerCore.AppComponent;
 import com.example.gamecam.modelapplication.DaggerCore.AppModule;
@@ -14,10 +15,13 @@ import com.example.gamecam.modelapplication.DaggerCore.DaggerAppComponent;
  */
 
 public class ModelApplication extends ApplicationCore<AppComponent> {
+    private SharedPreferences sharedpreferences;
 
     @Override
     public void onCreate() {
         super.onCreate();
+        sharedpreferences = getSharedPreferences("app_prefs", Context.MODE_PRIVATE);
+        new DefaultPrefs(sharedpreferences);
 
     }
 
@@ -42,5 +46,6 @@ public class ModelApplication extends ApplicationCore<AppComponent> {
     public void onTerminate() {
         super.onTerminate();
     }
+
 }
 

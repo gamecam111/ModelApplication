@@ -2,6 +2,7 @@ package com.example.gamecam.modelapplication.StartActivity.UI;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,7 +27,6 @@ public class StartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
-        System.out.println("Test");
 
         //Inject do aktivity
         ModelApplication.get(this)
@@ -48,10 +48,17 @@ public class StartActivity extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 startActivity(new Intent(getApplicationContext(), SecondActivity.class));
                 finish();
+
+                //Todo toto je nacitanie preferenc
+                //SharedPreferences sh=stp.getPrefs();
+                //System.out.println(sh.getString("1",null));
             }
         });
+
 
     }
 
@@ -59,7 +66,7 @@ public class StartActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        stp.setContext(this);
+        stp.setActualContext(this);
         stp.inicialize();
     }
 
@@ -67,8 +74,9 @@ public class StartActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        stp.setContext(null);
+        stp.unSetActualContext();
     }
+
 
 
 }

@@ -1,6 +1,7 @@
 package com.example.gamecam.modelapplication.StartActivity.Inject;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 
 import com.example.gamecam.modelapplication.DaggerCore.ApplicationScope;
 import com.example.gamecam.modelapplication.StartActivity.UI.StartPresenter;
@@ -23,7 +24,7 @@ public class StartModule {
 
     @Provides
     @ApplicationScope
-    StartPresenter getPresenter() {
-        return new StartPresenter(mContext);
+    StartPresenter getPresenter(SharedPreferences prefs) {
+        return new StartPresenter(mContext, prefs);
     }
 }
